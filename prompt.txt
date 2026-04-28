@@ -1,0 +1,70 @@
+You are an expert full-stack developer. You are building a documentation website for the open-source monorepo "typest" using Mintlify (https://mintlify.com). The website will live inside the existing monorepo at `apps/web`.
+
+## Context about typest (monorepo)
+
+- **Monorepo root**: `typest`
+- **Packages**:
+  - `@typest/core` – scanner & code generator for typed asset paths (pure Node.js functions).
+  - `@typest/vite` – Vite plugin (import from `@typest/vite` for asset functions, configure with `@typest/vite/plugin`).
+  - `@typest/next` – Coming soon
+- All packages are built with TypeScript/tsup, use the same core, and are designed for zero-config type-safe asset references.
+- The core maps file extensions to asset types (image, video, audio, font, raw, generic) and generates both runtime JS and declaration files.
+- The website must showcase installation commands, API references, usage examples, and configuration for each package.
+
+## Requirements
+
+1. **Project setup**
+   - Create a new folder `apps/web` at the monorepo root.
+   - Initialize a simple Mintlify documentation project inside it. This requires:
+     - A `mint.json` file with site configuration.
+     - A `docs/` folder containing MDX files.
+     - (Optional) a `package.json` with `mintlify` as a dev dependency so that `pnpm dev` (or `mintlify dev`) starts the docs locally.
+   - The site should not require any other framework; Mintlify handles the build.
+
+2. **Mintlify configuration (`mint.json`)**
+   - Name: "Typest"
+   - Logo: a simple text logo "Typest" (or use a placeholder).
+   - Colors: primary: "#7C3AED" (purple), dark: "#111827".
+   - Navigation: top-level tabs for "Core", "Vite", with a "Home" tab (which is the landing page).
+   - Add GitHub link to the repository (e.g., `https://github.com/your-org/typest`).
+   - Set `"favicon": "/logo.svg"` (you may create a simple SVG logo placeholder in `public/logo.svg` – a purple square with "T" inside, or just skip and use text).
+   - Use the `"anchors"` and `"tabs"` feature to create the navigation structure.
+
+3. **Documentation pages** (all in MDX, using Mintlify's components)
+
+   - **Home page** (`docs/index.mdx`):
+     - Hero section explaining what typest does: type-safe asset paths for web apps.
+     - A card grid linking to each package's installation.
+     - An example snippet showing `imagePath('logo.png')` with autocomplete.
+     - Use `<CardGroup>`, `<CodeGroup>` and `<Frame>` if helpful.
+
+   - **Core** (tab "Core", `docs/core/`):
+     - `docs/core/overview.mdx` – brief intro, install, and core functions list.
+     - `docs/core/api.mdx` – full API reference for `scanAssets`, `generateRuntimeModule`, `generateDeclarations`, `watchAssets`. Include type signatures, option tables, and code examples.
+     - `docs/core/examples.mdx` – practical examples: building a simple Vite plugin with core, scanning a multi-folder project, etc.
+
+   - **Vite** (tab "Vite", `docs/vite/`):
+     - `docs/vite/overview.mdx` – what it does, install command (`@typest/vite`), and quick start.
+     - `docs/vite/configuration.mdx` – plugin options (`sources`, `generator`, `declarationPath`), code examples for `vite.config.ts`, and explanation of the default `.assets/types.d.ts`.
+     - `docs/vite/usage.mdx` – how to import and use `imagePath`, `videoPath`, etc., in components. Show React, Vue, Svelte snippets.
+
+4. **Design & content**
+   - Use real installation commands, e.g., `pnpm add @typest/core`, `pnpm add @typest/vite`.
+   - Include actual code snippets from the existing READMEs (you may copy relevant parts directly).
+   - Ensure all API tables are complete and match the TypeScript types.
+   - For the Vite and other examples, show the exact import for configuration and for usage (plugin vs runtime).
+   - Add a note about the generated declaration file and how TypeScript picks it up.
+
+5. **Assets**
+   - Create a simple `public/logo.svg` if desired, or omit and just use text.
+   - Add a `docs/favicon.svg` or point to the same logo.
+
+6. **Local dev instructions**
+   - Add `"dev": "mintlify dev"` script in `apps/web/package.json` (or the monorepo root's dev script can call it via Turbo).
+   - The docs site should be runnable with `pnpm dev` from `apps/web` and serve on `localhost:3000`.
+
+7. **Output**
+   - Generate all files in `apps/web/` with the structure described.
+   - Ensure the generated content is fully self-contained and ready to run after `pnpm install`.
+
+Please generate the complete documentation website now, exactly as specified.
