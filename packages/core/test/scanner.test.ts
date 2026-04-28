@@ -15,7 +15,7 @@ describe("scanAssets", () => {
   it("scans a single source and returns typed entries", async () => {
     const entries = await scanAssets([{ dir: fixtureDir }]);
     expect(entries).toHaveLength(2);
-    const logo = entries.find((e) => e.key === "images/logo.png");
+    const logo = entries.find((e) => e.key === "logo.png");
     expect(logo).toBeDefined();
     expect(logo!.type).toBe("image");
     expect(logo!.url).toBe("/images/logo.png");

@@ -18,7 +18,6 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "src",
     "README.md"
   ],
   "scripts": {
@@ -30,7 +29,7 @@
     "pushout-inc": "npm version patch --no-git-tag-version && pnpm pushout"
   },
   "peerDependencies": {
-    "vite": "^5.0.0 || ^6.0.0"
+    "vite": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "dependencies": {
     "@typest/core": "^0.1.1"

@@ -1,7 +1,11 @@
-./src
-tsconfig.json
+src
+test
+node_modules
+.turbo
+coverage
+*.log
+*.tsbuildinfo
+.DS_Store
+tsconfig*.json
 tsup.config.ts
 vitest.config.ts
-node_modules
-DS_Store
-.turbo

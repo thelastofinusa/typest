@@ -32,6 +32,42 @@ const typesDts = generateDeclarations(entries); // write to disk for TypeScript
 
 > Each entry: `{ key: "logo.png", url: "/logo.png", type: "image", ext: "png" }`
 
+#### Scan options
+
+```ts
+import { scanAssets } from "@typest/core";
+
+const entries = await scanAssets(
+  [
+    {
+      dir: "public/assets",
+      include: ["**/*"],
+      exclude: ["**/*.psd"],
+      basePath: "/assets",
+    },
+  ],
+  {
+    keyStrategy: "filename",
+    globalBasePath: "",
+    customTypes: {
+      glb: "raw",
+    },
+  },
+);
+```
+
+#### Watching
+
+```ts
+import { watchAssets } from "@typest/core";
+
+const watcher = watchAssets([{ dir: "public", basePath: "" }], (entries) => {
+  entries.length;
+});
+
+watcher.close();
+```
+
 #### API at a glance
 
 ```ts

@@ -1,7 +1,7 @@
 import path from "node:path";
 import fs from "node:fs/promises";
 import type { Plugin, ResolvedConfig } from "vite";
-import { scanAssets } from "@typest/core";
+import { scanAssets, watchAssets } from "@typest/core";
 import type { AssetSource, GeneratorOptions, AssetEntry } from "@typest/core";
 
 export interface ViteTypedAssetsOptions {
@@ -107,6 +107,8 @@ function capitalize(s: string) {
 export function typedAssets(options: ViteTypedAssetsOptions): Plugin {
   let config: ResolvedConfig;
   let cachedRuntimeCode: string | undefined;
+  let enqueue = Promise.resolve();
+  let closeWatcher: (() => void) | undefined;
   const { sources, generator: generatorOptions } = options;
 
   const writeDeclarations = async (entries: AssetEntry[]) => {
@@ -145,10 +147,33 @@ export function typedAssets(options: ViteTypedAssetsOptions): Plugin {
 
     async configureServer(server) {
       await regenerate();
+      const watcher = watchAssets(sources, (entries) => {
+        enqueue = enqueue.then(async () => {
+          const runtimeCode = generateVirtualModule(entries, generatorOptions);
+          await writeDeclarations(entries);
+          cachedRuntimeCode = runtimeCode;
+
+          const mod = server.moduleGraph.getModuleById(
+            RESOLVED_ASSET_IMPORT_PATH,
+          );
+          if (mod) server.moduleGraph.invalidateModule(mod);
+          server.ws.send({ type: "full-reload" });
+        });
+      });
+
+      closeWatcher = () => {
+        void watcher.close();
+      };
+      server.httpServer?.once("close", closeWatcher);
     },
 
     async buildStart() {
       await regenerate();
+    },
+
+    buildEnd() {
+      closeWatcher?.();
+      closeWatcher = undefined;
     },
   };
 }

@@ -1,29 +1,49 @@
-## @typest - Typed asset paths for modern web frameworks
+## @typest — Typed asset paths (monorepo)
 
-No more broken image URLs, no more string typos – just install the plugin for your bundler and get full autocompletion and compile‑time checking for every asset you reference.
+Typed asset paths for TypeScript projects. Framework integrations provide a virtual module you import from (with autocomplete + type-checking), backed by a shared core that scans asset folders and generates runtime JS + `.d.ts`.
 
-#### How it works
+#### Repository layout
 
-1. **Install** the plugin for your framework.
-2. **Configure** it with your asset directories.
-3. **Import** `imagePath` (or `videoPath`, `fontPath`, etc.) directly from the plugin package.
-4. **Autocomplete** works instantly, and the build fails if an asset is missing.
+- `packages/core` — framework-agnostic scanner, watcher, and code generators
+- `packages/*` — framework integrations (Vite today; more coming)
+- `examples/*` — working example apps for each integration
 
 #### Packages
 
-| Package                           | Description                                                                          |
-| --------------------------------- | ------------------------------------------------------------------------------------ |
-| [`@typest/core`](./packages/core) | Scanner, code‑generator, and watcher – the engine used by all framework integrations |
-| [`@typest/vite`](./packages/vite) | Vite plugin (works with React, Vue, Svelte, etc.)                                    |
+| Package                           | What it is                                                                              |
+| --------------------------------- | --------------------------------------------------------------------------------------- |
+| [`@typest/core`](./packages/core) | Scanner + watcher + generators (used by all integrations)                               |
+| [`@typest/vite`](./packages/vite) | Vite plugin: generates types + serves a virtual module for runtime asset URL resolution |
 
-#### Framework support
+Planned integrations include packages for Next.js, Vue tooling, and other ecosystems.
 
-- **Vite** – `@typest/vite`
-- **Nuxt / Remix / Astro** – can use the Vite plugin directly
+#### Quickstart (Vite)
 
-#### Philosophy
+Install:
 
-- **Zero‑config by default** – sensible defaults work out‑of‑the‑box.
-- **Framework‑agnostic core** – all plugins share the same scanning and code‑generation logic.
-- **Type‑safety without runtime overhead** – generated code is pure JavaScript, types are in .d.ts files.
-- **No manual regeneration** – assets are re‑scanned automatically when you add or remove files.
+```bash
+npm install -D @typest/vite
+```
+
+Configure Vite (plugin entrypoint):
+
+```ts
+import { defineConfig } from "vite";
+import { typedAssets } from "@typest/vite/plugin";
+
+export default defineConfig({
+  plugins: [
+    typedAssets({
+      sources: [{ dir: "public" }],
+    }),
+  ],
+});
+```
+
+Use in app code (virtual module entrypoint):
+
+```ts
+import { imagePath } from "@typest/vite";
+
+imagePath("favicon.svg");
+```

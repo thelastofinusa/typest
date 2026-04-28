@@ -33,8 +33,8 @@ export interface AssetEntry {
 export interface ScanOptions {
   /**
    * Strategy for building keys:
-   * - 'relative': key is the file path relative to its source directory (default)
-   * - 'filename': key is the filename including extension (collisions will be flagged)
+   * - 'filename': key is the filename including extension (default)
+   * - 'relative': key is the file path relative to its source directory
    */
   keyStrategy?: "relative" | "filename";
   /** Additional extension → type mappings (merged with defaults) */

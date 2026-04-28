@@ -1,3 +1,5 @@
 {
-  "cSpell.words": ["pushout", "typest"]
+  "cSpell.words": ["pushout", "typest"],
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
