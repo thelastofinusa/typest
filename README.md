@@ -12,9 +12,9 @@ No more broken image URLs, no more string typos – just install the plugin for 
 #### Packages
 
 | Package                           | Description                                                                          |
-| --------------------------------- | ------------------------------------------------------------------------------------ | --- |
+| --------------------------------- | ------------------------------------------------------------------------------------ |
 | [`@typest/core`](./packages/core) | Scanner, code‑generator, and watcher – the engine used by all framework integrations |
-| [`@typest/vite`](./packages/vite) | Vite plugin (works with React, Vue, Svelte, etc.)                                    |     |
+| [`@typest/vite`](./packages/vite) | Vite plugin (works with React, Vue, Svelte, etc.)                                    |
 
 #### Framework support
 
