@@ -1,6 +1,6 @@
 ## @typest - Typed asset paths for modern web frameworks
 
-Typed asset paths for modern web frameworks. No more broken image URLs, no more string typos – just install the plugin for your bundler and get full autocompletion and compile‑time checking for every asset you reference.
+No more broken image URLs, no more string typos – just install the plugin for your bundler and get full autocompletion and compile‑time checking for every asset you reference.
 
 #### How it works
 
