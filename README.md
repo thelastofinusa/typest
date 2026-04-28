@@ -1,4 +1,4 @@
-## @typest - Typed asset paths for modern frontend
+## @typest - Typed asset paths for modern web frameworks
 
 Typed asset paths for modern web frameworks. No more broken image URLs, no more string typos – just install the plugin for your bundler and get full autocompletion and compile‑time checking for every asset you reference.
 
@@ -22,24 +22,6 @@ Typed asset paths for modern web frameworks. No more broken image URLs, no more 
 - **Vite** – `@typest/vite`
 - **Next.js** – `@typest/next`
 - **Nuxt / Remix / Astro** – can use the Vite plugin directly
-
-#### Quick example (Vite)
-
-```ts
-// vite.config.ts
-import { typedAssets } from "@typest/vite/plugin";
-
-export default defineConfig({
-  plugins: [typedAssets({ sources: [{ dir: "public" }] })],
-});
-```
-
-```tsx
-// App.tsx
-import { imagePath } from "@typest/vite";
-
-<img src={imagePath("logo.png")} />; // fully typed, autocompleted
-```
 
 #### Philosophy
 
