@@ -1,0 +1,50 @@
+{
+  "name": "@typest/vite",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Vite plugin for typed asset paths – autocomplete & type‑checking",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    },
+    "./plugin": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "lint": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vite": "^5.0.0 || ^6.0.0"
+  },
+  "dependencies": {
+    "@typest/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "typed",
+    "assets",
+    "typescript"
+  ],
+  "license": "MIT"
+}
