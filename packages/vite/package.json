@@ -25,13 +25,15 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "pushout": "npm publish --access public",
+    "pushout-inc": "npm version patch --no-git-tag-version && pnpm pushout"
   },
   "peerDependencies": {
     "vite": "^5.0.0 || ^6.0.0"
   },
   "dependencies": {
-    "@typest/core": "workspace:*"
+    "@typest/core": "^0.1.1"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",

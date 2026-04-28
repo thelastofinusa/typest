@@ -12,15 +12,13 @@ No more broken image URLs, no more string typos – just install the plugin for 
 #### Packages
 
 | Package                           | Description                                                                          |
-| --------------------------------- | ------------------------------------------------------------------------------------ |
+| --------------------------------- | ------------------------------------------------------------------------------------ | --- |
 | [`@typest/core`](./packages/core) | Scanner, code‑generator, and watcher – the engine used by all framework integrations |
-| [`@typest/vite`](./packages/vite) | Vite plugin (works with React, Vue, Svelte, etc.)                                    |
-| [`@typest/next`](./packages/next) | Next.js plugin (works with both Webpack and Turbopack)                               |
+| [`@typest/vite`](./packages/vite) | Vite plugin (works with React, Vue, Svelte, etc.)                                    |     |
 
 #### Framework support
 
 - **Vite** – `@typest/vite`
-- **Next.js** – `@typest/next`
 - **Nuxt / Remix / Astro** – can use the Vite plugin directly
 
 #### Philosophy
