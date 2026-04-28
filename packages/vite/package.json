@@ -1,6 +1,6 @@
 {
   "name": "@typest/vite",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Vite plugin for typed asset paths – autocomplete & type‑checking",
   "exports": {
@@ -20,6 +20,14 @@
     "dist",
     "README.md"
   ],
+  "homepage": "https://github.com/thelastofinusa/typest",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thelastofinusa/typest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thelastofinusa/typest/issues"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -32,7 +40,7 @@
     "vite": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "dependencies": {
-    "@typest/core": "^0.1.1"
+    "@typest/core": "^0.1.5"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",

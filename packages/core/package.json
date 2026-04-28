@@ -1,6 +1,6 @@
 {
   "name": "@typest/core",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "private": false,
   "description": "Typed asset paths – core scanner & code generator",
   "type": "module",
@@ -31,6 +31,14 @@
   "dependencies": {
     "chokidar": "^5.0.0",
     "fast-glob": "^3.3.3"
+  },
+  "homepage": "https://github.com/thelastofinusa/typest",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thelastofinusa/typest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thelastofinusa/typest/issues"
   },
   "keywords": [
     "typed",

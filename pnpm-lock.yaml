@@ -95,8 +95,8 @@ importers:
   packages/vite:
     dependencies:
       '@typest/core':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.5
+        version: 0.1.5
     devDependencies:
       '@types/node':
         specifier: ^25.6.0
@@ -785,8 +785,8 @@ packages:
     resolution: {integrity: sha512-LdDNl6C5iJExcM0Yh0PwAIBb9PrSiCsWamF/JyEZawm3kFDnRoaq3LGE4bpyRao/fWeGKKyw7icx0YxrLFC5Cg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@typest/core@0.1.1':
-    resolution: {integrity: sha512-zwCBL4xFM7eVv3QlJMHpyz4a0+kGOKgluYc2rmU5DgSNdKREqHMnBUOzrtz8CdgQjsWvUKZX0qhMRg9TaF7wVg==}
+  '@typest/core@0.1.5':
+    resolution: {integrity: sha512-GUr+autHGdbPBRXW90s/vHocjFwPVYtwLIRQ4v+lqxEmT1/mHS5EAdzWMKqLFWgwO7cD42jk8l0AHQQ7ba2ZZQ==}
 
   '@vitejs/plugin-react@6.0.1':
     resolution: {integrity: sha512-l9X/E3cDb+xY3SWzlG1MOGt2usfEHGMNIaegaUGFsLkb3RCn/k8/TOXBcab+OndDI4TBtktT8/9BwwW8Vi9KUQ==}
@@ -2218,7 +2218,7 @@ snapshots:
       '@typescript-eslint/types': 8.59.1
       eslint-visitor-keys: 5.0.1
 
-  '@typest/core@0.1.1':
+  '@typest/core@0.1.5':
     dependencies:
       chokidar: 5.0.0
       fast-glob: 3.3.3
