@@ -33,24 +33,26 @@ export const DEFAULT_TYPE_MAP: Record<string, AssetType> = {
   yml: "raw",
 };
 
-/**
- * Determine asset type from extension.
- * Custom types per source can override the default.
- */
+/** Maps asset type → exported function name */
+export const TYPE_FUNC_MAP: Record<string, string> = {
+  image: "imagePath",
+  video: "videoPath",
+  audio: "audioPath",
+  font: "fontPath",
+  raw: "rawPath",
+  generic: "assetPath",
+};
+
 export function resolveAssetType(
   ext: string,
   typeMap?: Record<string, AssetType>,
   customTypes?: ScanOptions["customTypes"],
-): AssetType {
-  // source-level type map overrides everything
+) {
   if (typeMap?.[ext]) return typeMap[ext];
   if (customTypes?.[ext]) return customTypes[ext];
   return DEFAULT_TYPE_MAP[ext] ?? "generic";
 }
 
-/**
- * Build key and URL for a file.
- */
 export function buildKeyAndUrl(
   file: string,
   baseDir: string,
@@ -58,31 +60,19 @@ export function buildKeyAndUrl(
   globalBasePath: string,
   sourceBasePath?: string,
 ): { key: string; url: string } {
-  // Normalize file path to forward slashes
   const relativePath = file.replace(/\\/g, "/");
-  let key: string;
-  if (keyStrategy === "filename") {
-    key = path.basename(file);
-  } else {
-    // Remove leading ./ if any
-    key = relativePath.startsWith("./") ? relativePath.slice(2) : relativePath;
-  }
-
-  // Build URL: globalBasePath + sourceBasePath + relativePath
+  const key =
+    keyStrategy === "filename"
+      ? path.basename(file)
+      : relativePath.startsWith("./")
+        ? relativePath.slice(2)
+        : relativePath;
   const parts = [globalBasePath, sourceBasePath, relativePath].filter(Boolean);
-  let url = parts.join("/");
-  // Normalise multiple slashes
-  url = url.replace(/\/+/g, "/");
-  // Ensure leading slash
+  let url = parts.join("/").replace(/\/+/g, "/");
   if (!url.startsWith("/")) url = "/" + url;
-
   return { key, url };
 }
 
-/**
- * Ensure unique keys in an asset list.
- * If duplicate found, rename by appending the last directory segment of baseDir.
- */
 export function uniquifyKeys(
   entries: AssetEntry[],
   baseDir: string,
@@ -90,10 +80,13 @@ export function uniquifyKeys(
   const seen = new Set<string>();
   return entries.map((entry) => {
     if (seen.has(entry.key)) {
-      const dirName = path.basename(baseDir);
-      entry.key = `${entry.key}__${dirName}`;
+      entry.key = `${entry.key}__${path.basename(baseDir)}`;
     }
     seen.add(entry.key);
     return entry;
   });
+}
+
+export function capitalize(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1);
 }

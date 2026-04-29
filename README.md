@@ -1,4 +1,4 @@
-## @typest — Typed asset paths (monorepo)
+## @typest — Typed asset paths for modern frontend
 
 Typed asset paths for TypeScript projects. Framework integrations provide a virtual module you import from (with autocomplete + type-checking), backed by a shared core that scans asset folders and generates runtime JS + `.d.ts`.
 

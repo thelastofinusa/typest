@@ -1,18 +1,44 @@
-## @typest/core
+# Who should use @typest/core?
 
-_Scan asset folders, detect file types, and generate typed JavaScript & TypeScript code._
+`@typest/core` is the **engine** that scans your asset folders, detects file types, and generates typed JavaScript & TypeScript code. It is also the engine that powers the framework plugins.
+If you're using **Vite** or **Next.js**, you almost certainly want the higher‑level plugin instead:
 
----
+- [`@typest/vite`](/packages/vite) – one‑line setup, automatic dev‑server integration.
+- `@typest/next` – (coming soon) same experience for Next.js projects.
 
-### Installation
+::: tip You only need `@typest/core` directly when you are:
 
-```bash
-npm install @typest/core
+- Building a **custom integration** for a bundler or framework we don’t yet support (Webpack, Rollup, etc.).
+- Creating a **bespoke asset pipeline** that needs manual control over scanning, code generation, or watching.
+- Writing **tooling** (CLIs, build scripts, linters) that operates on asset directories.
+
+For everyone else, the framework plugins provide the exact same output with zero configuration beyond listing your asset folders.
+If you're unsure, start with the plugin – you can always drop down to the core later if your needs outgrow it.
+:::
+
+## Installation
+
+::: code-group
+
+```sh [npm]
+$ npm install @typest/core
 ```
 
----
+```sh [yarn]
+$ yarn install @typest/core
+```
 
-### What it does
+```sh [pnpm]
+$ pnpm install @typest/core
+```
+
+```sh [bun]
+$ bun add @typest/core
+```
+
+:::
+
+## What it does
 
 - `scanAssets` – walks directories and returns every file with its public URL, detected type, and a unique key.
 - `generateRuntimeModule` – produces a browser‑ready JavaScript file that exports `imagePath`, `videoPath`, etc., only for asset types that actually exist.
@@ -21,9 +47,7 @@ npm install @typest/core
 
 Framework plugins like `@typest/vite` are thin wrappers around these four functions.
 
----
-
-### Quick example
+## Quick example
 
 ```ts
 import {
@@ -40,9 +64,7 @@ const typesDts = generateDeclarations(entries); // write to disk for TypeScript
 
 Each entry: `{ key: "logo.png", url: "/logo.png", type: "image", ext: "png" }`
 
----
-
-### Scan options
+## Scan options
 
 ```ts
 import { scanAssets } from "@typest/core";
@@ -65,7 +87,7 @@ const entries = await scanAssets(
 );
 ```
 
-#### `AssetSource`
+### `AssetSource`
 
 | Option     | Type                        | Default     | Description                                                    |
 | ---------- | --------------------------- | ----------- | -------------------------------------------------------------- |
@@ -75,7 +97,7 @@ const entries = await scanAssets(
 | `exclude`  | `string[]`                  | `[]`        | Glob patterns to exclude.                                      |
 | `typeMap`  | `Record<string, AssetType>` | `undefined` | Override the default extension → type mapping for this source. |
 
-#### `ScanOptions`
+### `ScanOptions`
 
 | Option           | Type                         | Default      | Description                                                                                                                  |
 | ---------------- | ---------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -83,9 +105,7 @@ const entries = await scanAssets(
 | `customTypes`    | `Record<string, AssetType>`  | `undefined`  | Additional extension → type mappings merged with the defaults.                                                               |
 | `globalBasePath` | `string`                     | `""`         | Prepend this to every generated URL (useful for CDN).                                                                        |
 
----
-
-### Watching
+## Watching
 
 ```ts
 import { watchAssets } from "@typest/core";
@@ -99,9 +119,7 @@ const watcher = watchAssets([{ dir: "public", basePath: "" }], (entries) => {
 watcher.close();
 ```
 
----
-
-### Default type map
+## Default type map
 
 | Extension                                                        | Type      |
 | ---------------------------------------------------------------- | --------- |
@@ -114,9 +132,7 @@ watcher.close();
 
 You can override these per‑source or globally via `typeMap` / `customTypes`.
 
----
-
-### Building your own plugin
+## Building your own plugin
 
 If you're creating a framework integration (e.g., for Webpack or a new bundler), use the core like this:
 
@@ -140,9 +156,7 @@ await fs.writeFile("src/assets.d.ts", dts);
 
 For a complete real‑world example, see the source of [`@typest/vite`](https://github.com/thelastofinusa/typest).
 
----
-
-### API
+## API
 
 ```ts
 scanAssets(sources: AssetSource[], options?: ScanOptions): Promise<AssetEntry[]>
