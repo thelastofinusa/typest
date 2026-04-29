@@ -8,7 +8,7 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "pushout-all": "pnpm --filter @typest/core run pushout-inc && pnpm --filter @typest/vite run pushout-inc"
+    "pushout-all": "pnpm -r --parallel --filter @typest/core --filter @typest/vite run pushout-inc"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",

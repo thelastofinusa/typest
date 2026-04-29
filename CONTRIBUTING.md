@@ -1,17 +1,15 @@
-# Contributing to Typest
+## Contributing to Typest
 
 Thanks for your interest in contributing! Whether you're fixing a bug, adding a feature, or improving documentation, this guide will help you get started.
 
----
+#### Getting started
 
-## Getting started
-
-### Prerequisites
+**Prerequisites**
 
 - [Node.js](https://nodejs.org/) v18 or later
 - [pnpm](https://pnpm.io/) v9 or later
 
-### Setup
+**Setup**
 
 ```bash
 git clone https://github.com/thelastofinusa/typest.git
@@ -19,13 +17,13 @@ cd typest
 pnpm install
 ```
 
-### Build all packages
+**Build all packages**
 
 ```bash
 pnpm run build
 ```
 
-### Run tests
+**Run tests**
 
 ```bash
 pnpm run test
@@ -33,9 +31,7 @@ pnpm run test
 
 The monorepo structure is managed by [Turborepo](https://turbo.build) and pnpm workspaces.
 
----
-
-## Development workflow
+#### Development workflow
 
 1. **Create a branch** – `git checkout -b feature/my-feature` or `fix/some-bug`.
 2. **Make your changes** – keep them focused and minimal.
@@ -44,9 +40,7 @@ The monorepo structure is managed by [Turborepo](https://turbo.build) and pnpm w
 5. **Commit** – write clear, imperative commit messages (e.g., `Add support for custom file extensions`).
 6. **Push and open a pull request** – describe what you changed and why.
 
----
-
-## Project structure
+#### Project structure
 
 | Package         | Description                                                                      |
 | --------------- | -------------------------------------------------------------------------------- |
@@ -56,9 +50,7 @@ The monorepo structure is managed by [Turborepo](https://turbo.build) and pnpm w
 
 The shared build tooling lives in the root: `tsconfig.base.json`, `turbo.json`, and `pnpm-workspace.yaml`.
 
----
-
-## Coding conventions
+#### Coding conventions
 
 - **TypeScript strict mode** – all packages use `strict: true`.
 - **No unused locals or parameters** – enforced by the tsconfig.
@@ -66,9 +58,7 @@ The shared build tooling lives in the root: `tsconfig.base.json`, `turbo.json`, 
 - **Keep the API surface small** – prefer sensible defaults over configuration options.
 - **Test core functions** – unit tests live in `packages/core/test/`.
 
----
-
-## Pull request guidelines
+#### Pull request guidelines
 
 - Reference an existing issue if applicable.
 - Include a clear description of the problem and solution.
@@ -76,9 +66,7 @@ The shared build tooling lives in the root: `tsconfig.base.json`, `turbo.json`, 
 - Ensure the CI pipeline passes (build, test, lint).
 - Keep pull requests small – one logical change per PR.
 
----
-
-## Reporting issues
+#### Reporting issues
 
 Open an issue on [GitHub Issues](https://github.com/thelastofinusa/typest/issues) and include:
 
@@ -86,8 +74,6 @@ Open an issue on [GitHub Issues](https://github.com/thelastofinusa/typest/issues
 - A minimal reproduction repository or code snippet
 - The expected behavior vs. what actually happened
 
----
-
-## License
+#### License
 
 By contributing, you agree that your contributions will be licensed under the MIT License (see [LICENSE](./LICENSE)).
