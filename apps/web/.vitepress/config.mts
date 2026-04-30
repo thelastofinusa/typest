@@ -39,7 +39,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/intro" },
-      { text: "Plugins", link: "/guide/plugin" },
+      { text: "Overview", link: "/guide/plugin" },
     ],
     sidebar: {
       "/": [
