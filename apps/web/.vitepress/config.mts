@@ -19,7 +19,7 @@ export default defineConfig({
     [
       "link",
       {
-        href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap",
         rel: "stylesheet",
       },
     ],
@@ -28,6 +28,10 @@ export default defineConfig({
   markdown: {
     config(md) {
       groupIconMdPlugin(md);
+    },
+    theme: {
+      light: "github-light",
+      dark: "github-dark",
     },
   },
   vite: {
@@ -41,6 +45,8 @@ export default defineConfig({
       { text: "Guide", link: "/guide/intro" },
       { text: "Overview", link: "/guide/plugin" },
     ],
+    darkModeSwitchLabel: "Appearance",
+    outline: "deep",
     sidebar: {
       "/": [
         {
