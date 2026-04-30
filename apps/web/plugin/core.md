@@ -3,8 +3,8 @@
 `@typest/core` is the **engine** that scans your asset folders, detects file types, and generates typed JavaScript & TypeScript code. It is also the engine that powers the framework plugins.
 If you're using **Vite** or **Next.js**, you almost certainly want the higher‑level plugin instead:
 
-- [`@typest/vite`](/packages/vite) – one‑line setup, automatic dev‑server integration.
-- `@typest/next` – (coming soon) same experience for Next.js projects.
+- [`@typest/vite`](/plugin/vite) – one‑line setup, automatic dev‑server integration.
+- [`@typest/nextjs`](/plugin/next) – same experience for Next.js projects.
 
 ::: tip You only need `@typest/core` directly when you are:
 
@@ -45,7 +45,7 @@ $ bun add @typest/core
 - `generateDeclarations` – builds a `.d.ts` file with exact literal types so editors can provide perfect autocomplete.
 - `watchAssets` – watches asset folders and fires a callback on every change.
 
-Framework plugins like `@typest/vite` are thin wrappers around these four functions.
+Framework plugins like [`@typest/vite`](/plugin/vite) and [`@typest/nextjs`](/plugin/next) are thin wrappers around these four functions.
 
 ## Quick example
 

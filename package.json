@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "dev": "pnpm -r --parallel --filter @typest/nextjs-example --filter @typest/vite-example run dev",
     "test": "turbo run test",
     "lint": "turbo run lint",
     "clean": "turbo run clean",

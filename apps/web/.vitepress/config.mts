@@ -10,7 +10,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/intro" },
-      { text: "Packages", link: "/guide/packages" },
+      { text: "Plugins", link: "/guide/plugin" },
     ],
     sidebar: {
       "/": [
@@ -18,13 +18,13 @@ export default defineConfig({
           text: "Guide",
           items: [
             { text: "Introduction", link: "/guide/intro" },
-            { text: "Overview", link: "/guide/packages" },
+            { text: "Overview", link: "/guide/plugin" },
             {
-              text: "Packages",
+              text: "Plugins",
               items: [
-                { text: "Vite", link: "/packages/vite" },
-                { text: "Next.js" },
-                { text: "Core", link: "/packages/core" },
+                { text: "Vite", link: "/plugin/vite" },
+                { text: "Next.js", link: "/plugin/next" },
+                { text: "Core", link: "/plugin/core" },
               ],
             },
           ],

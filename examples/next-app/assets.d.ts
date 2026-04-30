@@ -12,24 +12,17 @@
  * ╚══════════════════════════════════════════════╝
  */
 
-declare module "@typest/vite" {
+declare module "@typest/nextjs" {
   /* ╔════════════════╗
      ║  Image Assets  ║
      ╚════════════════╝ */
   const imageAssets: {
-    readonly "icons.svg": "/icons.svg";
-    readonly "vite.svg": "/vite.svg";
-    readonly "react.svg": "/assets/react.svg";
-    readonly "favicon.svg": "/images/favicon.svg";
+    readonly "file.svg": "/file.svg";
+    readonly "globe.svg": "/globe.svg";
+    readonly "next.svg": "/next.svg";
+    readonly "vercel.svg": "/vercel.svg";
+    readonly "window.svg": "/window.svg";
   };
   type ImageKey = keyof typeof imageAssets;
   export function imagePath(key: ImageKey): string;
-  /* ╔════════════════╗
-     ║  Video Assets  ║
-     ╚════════════════╝ */
-  const videoAssets: {
-    readonly "vid.mp4": "/vid.mp4";
-  };
-  type VideoKey = keyof typeof videoAssets;
-  export function videoPath(key: VideoKey): string;
 }

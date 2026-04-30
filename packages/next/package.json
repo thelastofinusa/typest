@@ -1,0 +1,60 @@
+{
+  "name": "@typest/nextjs",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "Next.js plugin for typed asset paths (autocomplete + type-checking)",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./plugin": {
+      "types": "./dist/plugin.d.ts",
+      "import": "./dist/plugin.js",
+      "require": "./dist/plugin.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "pushout": "npm publish --access public",
+    "pushout-inc": "npm version patch --no-git-tag-version && pnpm pushout"
+  },
+  "homepage": "https://typest-web.vercel.app/packages/next.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thelastofinusa/typest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thelastofinusa/typest/issues"
+  },
+  "dependencies": {
+    "@typest/core": "^1.0.1"
+  },
+  "peerDependencies": {
+    "next": ">=13.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "@types/node": "^25.6.0"
+  },
+  "keywords": [
+    "nextjs",
+    "next.js",
+    "plugin",
+    "typed",
+    "assets",
+    "typescript"
+  ],
+  "license": "MIT"
+}

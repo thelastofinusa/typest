@@ -73,7 +73,7 @@ This happens **only when the dev server runs** – until then your editor can’
 
 **3. Import and use**
 
-```ts [App.tsx]
+```tsx [App.tsx]
 import { imagePath } from "@typest/vite";
 
 <img src={imagePath("logo.png")} />;
