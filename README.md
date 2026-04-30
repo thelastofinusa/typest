@@ -10,40 +10,19 @@ Typed asset paths for TypeScript projects. Framework integrations provide a virt
 
 #### Packages
 
-| Package                           | What it is                                                                              |
-| --------------------------------- | --------------------------------------------------------------------------------------- |
-| [`@typest/core`](./packages/core) | Scanner + watcher + generators (used by all integrations)                               |
-| [`@typest/vite`](./packages/vite) | Vite plugin: generates types + serves a virtual module for runtime asset URL resolution |
+| Package                               | What it is                                                                                 |
+| ------------------------------------- | ------------------------------------------------------------------------------------------ |
+| [`@typest/core`](./packages/core)     | Scanner + watcher + generators (used by all integrations)                                  |
+| [`@typest/vite`](./packages/vite)     | Vite plugin: generates types + serves a virtual module for runtime asset URL resolution    |
+| [`@typest/nextjs`](./packages/nextjs) | Next.js plugin: generates types + serves a virtual module for runtime asset URL resolution |
 
 Planned integrations include packages for Next.js, Vue tooling, and other ecosystems.
 
-#### Quickstart (Vite)
+#### Contributing
 
-Install:
+We welcome fixes, features, and docs improvements!
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup steps, coding conventions, and the pull request process.
 
-```bash
-npm install -D @typest/vite
-```
+#### License
 
-Configure Vite (plugin entrypoint):
-
-```ts
-import { defineConfig } from "vite";
-import { typedAssets } from "@typest/vite/plugin";
-
-export default defineConfig({
-  plugins: [
-    typedAssets({
-      sources: [{ dir: "public" }],
-    }),
-  ],
-});
-```
-
-Use in app code (virtual module entrypoint):
-
-```ts
-import { imagePath } from "@typest/vite";
-
-imagePath("favicon.svg");
-```
+MIT — see [LICENSE](./LICENSE) for details.

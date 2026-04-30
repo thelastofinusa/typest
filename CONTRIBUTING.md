@@ -42,11 +42,13 @@ The monorepo structure is managed by [Turborepo](https://turbo.build) and pnpm w
 
 #### Project structure
 
-| Package         | Description                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| `packages/core` | Asset scanner, code generator, and file watcher – used by all framework plugins. |
-| `packages/vite` | Vite plugin – serves a virtual module and generates type declarations.           |
-| `examples/*`    | Sample projects to test plugins locally.                                         |
+| Package           | Description                                                                      |
+| ----------------- | -------------------------------------------------------------------------------- |
+| `packages/core`   | Asset scanner, code generator, and file watcher – used by all framework plugins. |
+| `packages/vite`   | Vite plugin – serves a virtual module and generates type declarations.           |
+| `packages/nextjs` | Next.js plugin – serves a virtual module and generates type declarations.        |
+| `examples/*`      | Sample projects to test plugins locally.                                         |
+| `apps/web`        | Typest documentation website.                                                    |
 
 The shared build tooling lives in the root: `tsconfig.base.json`, `turbo.json`, and `pnpm-workspace.yaml`.
 
