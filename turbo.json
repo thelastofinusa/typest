@@ -13,6 +13,9 @@
       "dependsOn": ["build"],
       "inputs": ["src/**", "test/**", "vitest.config.ts"]
     },
+    "@typest/web#build": {
+      "outputs": [".vitepress/dist/**"]
+    },
     "lint": {},
     "clean": {
       "cache": false

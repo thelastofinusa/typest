@@ -1,12 +1,41 @@
-import { defineConfig, HeadConfig } from "vitepress";
+import { defineConfig } from "vitepress";
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from "vitepress-plugin-group-icons";
 
 export default defineConfig({
   title: "Typest",
   description:
     "Import every asset with autocomplete and confidence — no strings attached.",
   lastUpdated: true,
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+    ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+    [
+      "link",
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+    ],
+    [
+      "link",
+      {
+        href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+        rel: "stylesheet",
+      },
+    ],
+    ["link", { rel: "stylesheet", href: "/custom.css" }],
+  ],
+  markdown: {
+    config(md) {
+      groupIconMdPlugin(md);
+    },
+  },
+  vite: {
+    plugins: [groupIconVitePlugin()],
+  },
   themeConfig: {
     siteTitle: "Typest",
+    logo: "/favicon.svg",
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/intro" },
@@ -41,13 +70,8 @@ export default defineConfig({
         "Copyright © 2026-present <a target='_blank' href='https://x.com/thelastofinusa'>Holiday.</a>",
     },
     editLink: {
-      pattern: ({ filePath }) => {
-        if (filePath.startsWith("packages/")) {
-          return `https://github.com/thelastofinusa/typest/edit/main/${filePath}`;
-        } else {
-          return `https://github.com/thelastofinusa/typest/edit/main/docs/${filePath}`;
-        }
-      },
+      pattern:
+        "https://github.com/thelastofinusa/typest/edit/main/apps/web/:path",
       text: "Edit this page on GitHub",
     },
     search: {

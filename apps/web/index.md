@@ -2,8 +2,7 @@
 layout: home
 
 hero:
-  name: Typest
-  text: Typed Asset Paths for Modern Frameworks.
+  text: "Typest: Typed Asset Paths for Modern Web Frameworks."
   tagline: Import every asset with autocomplete and confidence — No broken paths, no string typos.
   actions:
     - theme: brand

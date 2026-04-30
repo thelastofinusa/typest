@@ -1,0 +1,20 @@
+/* Apply Lato everywhere */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Adjust headings weight if you want a cleaner look */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.vp-code-group .tabs label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}

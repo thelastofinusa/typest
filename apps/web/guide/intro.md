@@ -1,20 +1,30 @@
 # Introduction
 
-Typest gives you **compile‑time safe, autocompleted asset paths** in any TypeScript frontend project.
+Typest brings **type‑safe, autocompleted asset paths** to every TypeScript frontend project – so you never have to leave your editor to look up a file name again.
 
-No more:
+Modern web applications reference dozens, sometimes hundreds of static assets: images, fonts, icons, videos, and more. Without tooling, you’re left with a fragile manual workflow:
 
-- Typing string paths by hand.
-- Finding broken images only after you deploy.
-- Manually updating an asset list when files change.
+1. Drop a file into the `public` folder.
+2. Check the exact file name.
+3. Go back to your code and type the path as a string.
+4. Hope you didn’t misspell it.
+5. Deploy – and discover broken images only when a user reports them.
 
-Just install the plugin for your framework, add one line to your config, and import `imagePath` (or `videoPath`, `fontPath`, …) with perfect IntelliSense.
+That loop is slow, error‑prone, and completely avoidable.
+
+Typest replaces it with **automatic, always‑correct paths** that your editor understands.
+Install the plugin for your framework, point it at your asset folders, and import `imagePath`, `videoPath`, `fontPath`, or any other generated helper – all with perfect IntelliSense.
+
+> Change an asset? Add a new one? Delete one that’s no longer used? The types update instantly, and your build catches any stale references before they reach production.
 
 ## How it works
 
-1. **Scan** – The plugin watches your `public/` folder (or any directory you configure).
-2. **Generate** – A pure‑JavaScript runtime module is served, mapping every asset filename to its public URL.
-3. **Declare** – A `.d.ts` file is written with exact string‑literal types for every asset key.
-4. **Update** – When you add or remove files, the types refresh automatically.
+1. **Scan** – The plugin watches the directories you configure (typically `public/`).
+2. **Generate** – A pure‑JavaScript module is created that maps every asset filename to its actual public URL.
+3. **Declare** – A `.d.ts` file gives TypeScript an exact, literal union of every available asset key.
+4. **Update** – Whenever a file is added or removed, the types are refreshed automatically – no manual regeneration, no restart required.
 
-Your editor sees the actual asset names, your build catches typos, and your production bundle contains nothing extra – the runtime code is just a simple object lookup.
+Your editor shows you exactly which assets exist. Your build fails if you reference a file that doesn’t.
+And your application bundles contain nothing extra – the runtime code is a simple object lookup, shipped as fast as a handwritten string.
+
+Typest doesn’t just save keystrokes. It eliminates an entire class of bugs that slip through manual review and land in production unnoticed.

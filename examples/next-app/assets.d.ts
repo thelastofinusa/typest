@@ -25,4 +25,5 @@ declare module "@typest/nextjs" {
   };
   type ImageKey = keyof typeof imageAssets;
   export function imagePath(key: ImageKey): string;
+
 }
