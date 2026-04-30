@@ -1,6 +1,6 @@
 {
   "name": "@typest/vite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Vite plugin for typed asset paths (autocomplete + type-checking)",
   "exports": {
@@ -20,7 +20,7 @@
     "dist",
     "README.md"
   ],
-  "homepage": "https://typest-web.vercel.app/packages/vite.html",
+  "homepage": "https://typest-web.vercel.app/plugin/vite.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/thelastofinusa/typest.git"
@@ -40,7 +40,7 @@
     "vite": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "dependencies": {
-    "@typest/core": "^1.0.1"
+    "@typest/core": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
