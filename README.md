@@ -2,16 +2,17 @@
 
 Typed asset paths for TypeScript projects. Framework integrations provide a virtual module you import from (with autocomplete + type-checking), backed by a shared core that scans asset folders and generates runtime JS + `.d.ts`.
 
-<div style="position: relative; width: 100%; padding-bottom: 56.25%; margin: 32px auto;">
-  <iframe
-    src="https://www.youtube.com/embed/ga9O8Tq4MTQ?si=DQ_Kb_0gQrN9EavY"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-  ></iframe>
-</div>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=ga9O8Tq4MTQ">
+    <span style="display: inline-block; width: 508px;">
+      <img
+        src="https://img.youtube.com/vi/ga9O8Tq4MTQ/maxresdefault.jpg"
+        alt="Watch the video"
+        style="width: 100%;"
+      />
+    </span>
+  </a>
+</p>
 
 #### Repository layout
 
