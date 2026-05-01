@@ -12,7 +12,16 @@ Modern web applications reference dozens, sometimes hundreds of static assets: i
 
 That loop is slow, error‑prone, and completely avoidable.
 
-<iframe width="600" height="315" src="https://www.youtube.com/embed/ga9O8Tq4MTQ?si=DQ_Kb_0gQrN9EavY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+<div style="position: relative; width: 100%; padding-bottom: 56.25%; margin: 32px auto;">
+  <iframe
+    src="https://www.youtube.com/embed/ga9O8Tq4MTQ?si=DQ_Kb_0gQrN9EavY"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+  ></iframe>
+</div>
 
 Typest replaces it with **automatic, always‑correct paths** that your editor understands.
 Install the plugin for your framework, point it at your asset folders, and import `imagePath`, `videoPath`, `fontPath`, or any other generated helper – all with perfect IntelliSense.
