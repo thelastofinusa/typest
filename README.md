@@ -2,17 +2,7 @@
 
 Typed asset paths for TypeScript projects. Framework integrations provide a virtual module you import from (with autocomplete + type-checking), backed by a shared core that scans asset folders and generates runtime JS + `.d.ts`.
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=ga9O8Tq4MTQ">
-    <span style="display: inline-block; width: 508px;">
-      <img
-        src="https://img.youtube.com/vi/ga9O8Tq4MTQ/maxresdefault.jpg"
-        alt="Watch the video"
-        style="width: 100%;"
-      />
-    </span>
-  </a>
-</p>
+<a target="_blank" href="https://www.youtube.com/watch?v=ga9O8Tq4MTQ"><b>▶ Watch the Typest Demo</b></a>
 
 #### Repository layout
 
