@@ -1,6 +1,6 @@
 {
   "name": "@typest/nextjs",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "type": "module",
   "description": "Next.js plugin for typed asset paths (autocomplete + type-checking)",
   "exports": {
@@ -29,10 +29,11 @@
     "pushout": "npm publish --access public",
     "pushout-inc": "npm version patch --no-git-tag-version && pnpm pushout"
   },
-  "homepage": "https://typest-web.vercel.app/plugin/next.html",
+  "homepage": "https://thetypest.vercel.app/plugin/next.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thelastofinusa/typest.git"
+    "url": "https://github.com/thelastofinusa/typest.git",
+    "directory": "packages/next"
   },
   "bugs": {
     "url": "https://github.com/thelastofinusa/typest/issues"

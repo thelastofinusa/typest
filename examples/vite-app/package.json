@@ -1,5 +1,5 @@
 {
-  "name": "@typest/vite-example",
+  "name": "vite-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@typest/vite": "^1.0.2",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "@typest/vite": "workspace:*"
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

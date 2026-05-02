@@ -1,10 +1,5 @@
 import type { NextConfig } from "next";
-import { withTypedAssets } from "@typest/nextjs/plugin";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const nextConfig: NextConfig = {};
 
-export default withTypedAssets({
-  sources: [{ dir: "public" }],
-})(nextConfig);
+export default nextConfig;

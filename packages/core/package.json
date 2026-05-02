@@ -1,6 +1,6 @@
 {
   "name": "@typest/core",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "private": false,
   "description": "Typed asset paths – core scanner & code generator",
   "type": "module",
@@ -32,10 +32,11 @@
     "chokidar": "^5.0.0",
     "fast-glob": "^3.3.3"
   },
-  "homepage": "https://typest-web.vercel.app/plugin/core.html",
+  "homepage": "https://thetypest.vercel.app/plugin/core.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thelastofinusa/typest.git"
+    "url": "https://github.com/thelastofinusa/typest.git",
+    "directory": "packages/core"
   },
   "bugs": {
     "url": "https://github.com/thelastofinusa/typest/issues"

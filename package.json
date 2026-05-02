@@ -3,11 +3,14 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "pnpm -r --parallel --filter @typest/nextjs-example --filter @typest/vite-example --filter @typest/web run dev",
+    "dev": "turbo run dev",
     "test": "turbo run test",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "cli:test:vite": "pnpm cli:dev && node packages/cli/dist/index.js config -d examples/vite-app",
+    "cli:test:next": "pnpm cli:dev && node packages/cli/dist/index.js config -d examples/next-app",
+    "pushout:cli": "pnpm cli:pushout"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",

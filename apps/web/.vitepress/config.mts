@@ -1,8 +1,5 @@
 import { defineConfig } from "vitepress";
-import {
-  groupIconMdPlugin,
-  groupIconVitePlugin,
-} from "vitepress-plugin-group-icons";
+import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
 
 export default defineConfig({
   title: "Typest",
@@ -26,9 +23,6 @@ export default defineConfig({
     ["link", { rel: "stylesheet", href: "/custom.css" }],
   ],
   markdown: {
-    config(md) {
-      groupIconMdPlugin(md);
-    },
     theme: {
       light: "github-light",
       dark: "github-dark",
@@ -57,6 +51,7 @@ export default defineConfig({
             {
               text: "Plugins",
               items: [
+                { text: "CLI", link: "/plugin/cli" },
                 { text: "Vite", link: "/plugin/vite" },
                 { text: "Next.js", link: "/plugin/next" },
                 { text: "Core", link: "/plugin/core" },
@@ -68,6 +63,11 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: "github", link: "https://github.com/thelastofinusa/typest" },
+      { icon: "npm", link: "https://www.npmjs.com/org/typest" },
+      {
+        icon: "producthunt",
+        link: "https://www.producthunt.com/products/typest",
+      },
     ],
     footer: {
       message:

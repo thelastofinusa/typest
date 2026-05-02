@@ -4,6 +4,7 @@ Typest is split into a few focused packages. Install only what you need.
 
 | Package                          | Description                                                                               |
 | -------------------------------- | ----------------------------------------------------------------------------------------- |
+| [`@typest/cli`](/plugin/cli)     | CLI tool – install globally to use in any project.                                        |
 | [`@typest/vite`](/plugin/vite)   | Vite plugin – works with React, Vue, Svelte, and every Vite‑based project.                |
 | [`@typest/nextjs`](/plugin/next) | Next.js plugin – same experience for Next.js projects.                                    |
 | [`@typest/core`](/plugin/core)   | Scanner, code generator, and file watcher. The engine used by all framework integrations. |
@@ -12,7 +13,7 @@ Typest is split into a few focused packages. Install only what you need.
 
 - **I use Vite** → install `@typest/vite`, add the plugin to `vite.config.ts`.
 - **I use Next.js** → install `@typest/nextjs`, add the plugin to `next.config.ts`.
-- **I use something else** → use the `typest` CLI to see if your setup is supported, or build your own integration using `@typest/core`.
+- **I use something else** → use the `@typest/cli` CLI to see if your setup is supported, or build your own integration using `@typest/core`.
 
 ## Shared features
 
