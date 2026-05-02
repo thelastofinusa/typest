@@ -27,6 +27,7 @@ import {
   containsProp,
   controlledComputed,
   controlledRef,
+  createDisposableDirective,
   createEventHook,
   createFetch,
   createFilterWrapper,
@@ -297,8 +298,8 @@ import {
   watchTriggerable,
   watchWithFilter,
   whenever
-} from "./chunk-JVONN52E.js";
-import "./chunk-JNFJ5NDD.js";
+} from "./chunk-WFKLV5OI.js";
+import "./chunk-J7YXE3CA.js";
 export {
   DefaultMagicKeysAliasMap,
   StorageSerializers,
@@ -328,6 +329,7 @@ export {
   containsProp,
   controlledComputed,
   controlledRef,
+  createDisposableDirective,
   createEventHook,
   createFetch,
   createFilterWrapper,
