@@ -1,4 +1,4 @@
-# @typest/vite
+# Vite plugin
 
 Vite plugin for **typed asset paths** – autocomplete & type‑checking for every static file in your `public` directory.
 

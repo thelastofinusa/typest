@@ -1,4 +1,4 @@
-# Introduction
+# What is Typest?
 
 Typest brings **type‑safe, autocompleted asset paths** to every TypeScript frontend project – so you never have to leave your editor to look up a file name again.
 

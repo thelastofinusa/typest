@@ -1,4 +1,4 @@
-# @typest/nextjs
+# Next.js plugin
 
 Next.js plugin for **typed asset paths** – autocomplete & type‑checking for every static file in your `public` directory.
 

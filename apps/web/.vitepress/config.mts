@@ -37,26 +37,29 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/intro" },
-      { text: "Overview", link: "/guide/plugin" },
+      {
+        text: "Contributing",
+        link: "https://github.com/thelastofinusa/typest/blob/main/CONTRIBUTING.md",
+      },
     ],
     darkModeSwitchLabel: "Appearance",
     outline: "deep",
     sidebar: {
       "/": [
         {
-          text: "Guide",
+          text: "Introduction",
           items: [
-            { text: "Introduction", link: "/guide/intro" },
-            { text: "Overview", link: "/guide/plugin" },
-            {
-              text: "Plugins",
-              items: [
-                { text: "CLI", link: "/plugin/cli" },
-                { text: "Vite", link: "/plugin/vite" },
-                { text: "Next.js", link: "/plugin/next" },
-                { text: "Core", link: "/plugin/core" },
-              ],
-            },
+            { text: "What is Typest?", link: "/guide/intro" },
+            { text: "Package Overview", link: "/guide/plugin" },
+          ],
+        },
+        {
+          text: "Get Started",
+          items: [
+            { text: "Using the CLI", link: "/plugin/cli" },
+            { text: "Vite plugin", link: "/plugin/vite" },
+            { text: "Next.js plugin", link: "/plugin/next" },
+            { text: "Core engine", link: "/plugin/core" },
           ],
         },
       ],

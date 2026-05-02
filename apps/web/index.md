@@ -6,8 +6,11 @@ hero:
   tagline: Import every asset with autocomplete and confidence — No broken paths, no string typos.
   actions:
     - theme: brand
-      text: Get Started
+      text: What is Typest?
       link: /guide/intro
+    - theme: alt
+      text: Quickstart
+      link: /plugin/cli.html
     - theme: alt
       text: GitHub
       link: https://github.com/thelastofinusa/typest

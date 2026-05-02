@@ -1,4 +1,4 @@
-# @typest/cli
+# Using the CLI
 
 The **Typest command-line tool** – detect your framework, install the correct plugin, and optionally auto‑configure your config file. One command, fully interactive.
 
