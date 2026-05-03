@@ -45,10 +45,13 @@ export function getConfigFileName(framework: string): string {
   return "";
 }
 
-export function manualInstructions(framework: string): string {
+export function manualInstructions(
+  framework: string,
+  configFile: string,
+): string {
   if (framework === "vite") {
     return [
-      `Open ${chalk.cyan("vite.config.ts")} and add:\n`,
+      `${chalk.yellow("Manual setup instructions:")} Open ${chalk.cyan(configFile)} and add:\n`,
 
       chalk.gray("1. Import the plugin"),
 
@@ -70,7 +73,7 @@ export function manualInstructions(framework: string): string {
 
   if (framework === "next") {
     return [
-      `Open ${chalk.cyan("next.config.ts")} and update:\n`,
+      `${chalk.yellow("Manual setup instructions:")} Open ${chalk.cyan(configFile)} and update:\n`,
 
       chalk.gray("1. Import the helper"),
 

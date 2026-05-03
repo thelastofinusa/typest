@@ -66,25 +66,50 @@ The CLI will:
 ## Interactive workflow example
 
 ```
-🔍 Scanning /Users/me/my-vite-app ...
-? Detected vite project. Is that correct? › (Y/n)
-? Which package manager do you want to use? › pnpm
-? Automatically update your config? (safe merge, no overwrites) › (Y/n)
-✅ Updated vite.config.ts (AST merged)
-
-? Install @typest/vite using pnpm? › (Y/n)
-📦 Installing @typest/vite with pnpm...
-
-🚀 Done! Start your dev server once to generate the type declarations.
+┌  Welcome to Typest CLI
+│
+◇  Detected vite project. Continue?
+│  Yes
+│
+◇  Which package manager do you want to use?
+│  pnpm
+│
+◇  Update your config file automatically? (safe merge, no overwrites)
+│  Yes
+│
+◇  Install @typest/vite using pnpm?
+│  Yes
+│
+│  Installing @typest/vite with pnpm…
+│  @typest/vite installed.
+│
+└  ✅ config updated · @typest/vite installed
+   (Start your dev server to generate the type declarations.)
 ```
 
-If auto-config is declined:
+If auto-config is declined, configuration happens last:
 
 ```
-🔧 Skipping config update...
-
-📋 Manual setup required:
-<instructions printed here>
+...
+◇  Update your config file automatically? (safe merge, no overwrites)
+│  No
+│
+◇  Install @typest/vite using pnpm?
+│  Yes
+│
+◇   ─────────────────────────────────────────────────────────────╮
+│                                                                │
+│  Manual setup instructions: Open vite.config.ts and add:       │
+│                                                                │
+│  1. Import the plugin                                          │
+│     import { typedAssets } from '@typest/vite/plugin';         │
+│                                                                │
+│  2. Add it to your plugins                                     │
+│     plugins: [typedAssets({ sources: [{ dir: 'public' }] })],  │
+│                                                                │
+├────────────────────────────────────────────────────────────────╯
+│
+└  ✅ Setup complete (Start your dev server to generate the type declarations.)
 ```
 
 ## Options
@@ -92,6 +117,7 @@ If auto-config is declined:
 | Option             | Description                                                |
 | ------------------ | ---------------------------------------------------------- |
 | `-d, --dir <path>` | Path to the project directory (default: current directory) |
+| `-y, --yes`        | Skip prompts and use defaults                              |
 | `-h, --help`       | Show help                                                  |
 | `-v, --version`    | Show version                                               |
 
